@@ -17,6 +17,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<javax.json-api.version>1.0</javax.json-api.version>
+		<org.glassfish.javax.json-impl.version>1.0.4</org.glassfish.javax.json-impl.version>
 	</properties>
 
 	<dependencies>
@@ -36,6 +38,13 @@
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
+		
+		<!-- javax.json -->
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+			<version>${javax.json-api.version}</version>
 		</dependency>
 
 		<dependency>
