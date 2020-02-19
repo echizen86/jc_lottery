@@ -8,7 +8,7 @@ public class LottoTypeDto {
 	
 	private String lottoType;
 	
-	private String decription;
+	private String description;
 
 	public BigDecimal getLottoTypeId() {
 		return lottoTypeId;
@@ -26,12 +26,12 @@ public class LottoTypeDto {
 		this.lottoType = lottoType;
 	}
 
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String decription) {
+		this.description = decription;
 	}
 
 }

@@ -9,7 +9,7 @@ public class AssemblerLottoType {
 		LottoTypeDto lottoTypeDto = new LottoTypeDto();
 		lottoTypeDto.setLottoTypeId(lottoType.getLottoTypeId());
 		lottoTypeDto.setLottoType(lottoType.getLottoType());
-		lottoTypeDto.setDecription(lottoType.getDescription());
+		lottoTypeDto.setDescription(lottoType.getDescription());
 		return lottoTypeDto;
 	}
 	
@@ -17,7 +17,7 @@ public class AssemblerLottoType {
 		LottoType lottoType = new LottoType();
 		lottoType.setLottoTypeId(lottoTypeDto.getLottoTypeId());
 		lottoType.setLottoType(lottoTypeDto.getLottoType());
-		lottoType.setDescription(lottoTypeDto.getDecription());
+		lottoType.setDescription(lottoTypeDto.getDescription());
 		return lottoType;
 	}
 
