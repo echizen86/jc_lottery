@@ -1,9 +1,11 @@
 package com.project.main.services.assembler;
 
 import com.project.main.services.domain.Lotto;
+import com.project.main.services.domain.LottoType;
 import com.project.main.services.dto.LottoDto;
+import com.project.main.services.dto.LottoTypeDto;
 
-public class LottoAssembler {
+public class AssemblerLotto {
 	
 	public static LottoDto fromLottoToLottoDto(Lotto lotto) {
 		LottoDto lottoDto = new LottoDto();
@@ -15,7 +17,7 @@ public class LottoAssembler {
 		lottoDto.setNumberFour(lotto.getNumberFour());
 		lottoDto.setNumberFive(lotto.getNumberFive());
 		lottoDto.setSpecialBall(lotto.getSpecialBall());
-		lottoDto.setLottoType(lotto.getLottoType());
+		lottoDto.setLottoType(AssemblerLottoType.fromLottoTypeToLottoTypeDto(lotto.getLottoType()));
 		return lottoDto;
 	}
 	
@@ -29,8 +31,9 @@ public class LottoAssembler {
 		lotto.setNumberFour(lottoDto.getNumberFour());
 		lotto.setNumberFive(lottoDto.getNumberFive());
 		lotto.setSpecialBall(lottoDto.getSpecialBall());
-		lotto.setLottoType(lottoDto.getLottoType());
+		lotto.setLottoType(AssemblerLottoType.fromLottoTypeDtoToLottoType(lottoDto.getLottoType()));
 		return lotto;
 	}
+	
 
 }

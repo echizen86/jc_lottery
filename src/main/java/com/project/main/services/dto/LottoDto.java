@@ -22,7 +22,7 @@ public class LottoDto {
 
 	private Integer specialBall;
 
-	private String lottoType;
+	private LottoTypeDto lottoType;
 
 	public BigDecimal getId() {
 		return id;
@@ -88,11 +88,11 @@ public class LottoDto {
 		this.specialBall = specialBall;
 	}
 
-	public String getLottoType() {
+	public LottoTypeDto getLottoType() {
 		return lottoType;
 	}
 
-	public void setLottoType(String lottoType) {
+	public void setLottoType(LottoTypeDto lottoType) {
 		this.lottoType = lottoType;
 	}
 

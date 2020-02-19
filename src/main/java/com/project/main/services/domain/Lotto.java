@@ -8,13 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "lotto_numbers")
 public class Lotto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "lotto_numbers_id")
 	private BigDecimal id;
 	
 	@Column(name = "date")
@@ -38,8 +42,9 @@ public class Lotto {
 	@Column(name = "special_ball")
 	private Integer specialBall;
 	
-	@Column(name = "lotto_type")
-	private String lottoType;
+	@OneToOne
+	@JoinColumn(name = "lotto_type_id", referencedColumnName = "lotto_type_id")
+	private LottoType lottoType;
 
 	public BigDecimal getId() {
 		return id;
@@ -105,11 +110,11 @@ public class Lotto {
 		this.specialBall = specialBall;
 	}
 
-	public String getLottoType() {
+	public LottoType getLottoType() {
 		return lottoType;
 	}
 
-	public void setLottoType(String lottoType) {
+	public void setLottoType(LottoType lottoType) {
 		this.lottoType = lottoType;
 	}
 	
