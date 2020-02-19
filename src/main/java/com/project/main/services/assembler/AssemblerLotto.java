@@ -1,9 +1,7 @@
 package com.project.main.services.assembler;
 
 import com.project.main.services.domain.Lotto;
-import com.project.main.services.domain.LottoType;
 import com.project.main.services.dto.LottoDto;
-import com.project.main.services.dto.LottoTypeDto;
 
 public class AssemblerLotto {
 	
