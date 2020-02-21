@@ -46,6 +46,12 @@
 			<artifactId>javax.json-api</artifactId>
 			<version>${javax.json-api.version}</version>
 		</dependency>
+		
+		<!-- Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -7,7 +7,6 @@ public class AssemblerLotto {
 	
 	public static LottoDto fromLottoToLottoDto(Lotto lotto) {
 		LottoDto lottoDto = new LottoDto();
-		lottoDto.setId(lotto.getId());
 		lottoDto.setDate(lotto.getDate());
 		lottoDto.setNumberOne(lotto.getNumberOne());
 		lottoDto.setNumberTwo(lotto.getNumberTwo());
@@ -21,7 +20,6 @@ public class AssemblerLotto {
 	
 	public static Lotto fromLottoDtoToLotto(LottoDto lottoDto) {
 		Lotto lotto = new Lotto();
-		lotto.setId(lottoDto.getId());
 		lotto.setDate(lottoDto.getDate());
 		lotto.setNumberOne(lottoDto.getNumberOne());
 		lotto.setNumberTwo(lottoDto.getNumberTwo());

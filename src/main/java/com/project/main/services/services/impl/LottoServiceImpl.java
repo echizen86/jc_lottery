@@ -1,5 +1,8 @@
 package com.project.main.services.services.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +22,19 @@ public class LottoServiceImpl implements LottoService {
 	public LottoDto saveLottoNumber(LottoDto lottoDto) {
 		Lotto lotto = new Lotto();
 		lotto = AssemblerLotto.fromLottoDtoToLotto(lottoDto);
-		lottoRepository.saveAndFlush(lotto);
+		Lotto result = lottoRepository.saveAndFlush(lotto);
 		
-		return AssemblerLotto.fromLottoToLottoDto(lotto);
+		return AssemblerLotto.fromLottoToLottoDto(result);
+	}
+	
+	@Override
+	public List<LottoDto> getAllLottoNumbersFromLottoType(String lottoType) {
+		List<Lotto> lottoNumbers = lottoRepository.getAllLottoNumberByLottoType(lottoType);
+		List<LottoDto> result = new ArrayList<LottoDto>();
+		lottoNumbers.forEach(number -> {
+			result.add(AssemblerLotto.fromLottoToLottoDto(number));
+		});
+		return result;
 	}
 
 }
