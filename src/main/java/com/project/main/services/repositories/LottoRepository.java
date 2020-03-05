@@ -11,7 +11,7 @@ import com.project.main.services.domain.Lotto;
 
 public interface LottoRepository extends JpaRepository<Lotto, BigDecimal>{
 	
-	@Query(value = "SELECT lotto_numbers FROM lotto_numbers INNER JOIN lotto_type ON lotto_numbers.lotto_type_id = lotto_type.lotto_type_id AND lotto_type.description = :lottoType", nativeQuery = true)
-	List<Lotto> getAllLottoNumberByLottoType(@Param("lottoType") String lottoType);
+	@Query(value = "SELECT * FROM lotto_numbers INNER JOIN lotto_type ON lotto_numbers.lotto_type_id = lotto_type.lotto_type_id AND lotto_type.lotto_type = :type", nativeQuery = true)
+	List<Lotto> getAllLottoNumberByLottoType(@Param("type") String lottoType);
 
 }
