@@ -1,5 +1,6 @@
 package com.project.main.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class LottoController {
 	}
 	
 	@RequestMapping(value = "/numbers-lotto-type", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody List<LottoDto> getLottoByLottoType(@RequestParam String lottoType) {
-		return lottoService.getAllLottoNumbersFromLottoType(lottoType);
+	public @ResponseBody List<LottoDto> getLottoByLottoType(@RequestParam String lottoType, @RequestParam(required = false) Date dateFrom, @RequestParam(required = false) Date dateTo) {
+		return lottoService.getAllLottoNumbersFromLottoType(lottoType, dateFrom, dateTo);
 	}
 
 }

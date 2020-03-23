@@ -1,6 +1,7 @@
 package com.project.main.services.services.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,16 @@ public class LottoServiceImpl implements LottoService {
 	}
 	
 	@Override
-	public List<LottoDto> getAllLottoNumbersFromLottoType(String lottoType) {
-		List<Lotto> lottoNumbers = lottoRepository.getAllLottoNumberByLottoType(lottoType);
-		List<LottoDto> result = new ArrayList<LottoDto>();
-		lottoNumbers.forEach(number -> {
-			result.add(AssemblerLotto.fromLottoToLottoDto(number));
-		});
-		return result;
+	public List<LottoDto> getAllLottoNumbersFromLottoType(String lottoType, Date dateFrom, Date dateTo) {
+		if (null == dateFrom && null == dateTo) {
+			List<Lotto> lottoNumbers = lottoRepository.getAllLottoNumberByLottoType(lottoType);
+			List<LottoDto> result = new ArrayList<LottoDto>();
+			lottoNumbers.forEach(number -> {
+				result.add(AssemblerLotto.fromLottoToLottoDto(number));
+			});
+			return result;
+		}
+		return null;
 	}
 
 }
